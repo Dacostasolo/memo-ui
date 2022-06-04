@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div class="container body-content">
+      <div class="display-note">
+        <h1 class="header gen-style">Notepad</h1>
+        <div class="container search-area">
+          <label for="input search">
+            <i class="fas fa-magnifying-glass"></i>
+            <input
+              type="search"
+              name="search"
+              id="search-notes"
+              class="search-inputs inputs"
+              placeholder="Search notes"
+            />
+          </label>
+        </div>
+        <div class="container main-body-content">
+          <div class="container note-item">
+            <div class="note-item-header">Welcome</div>
+            <div class="note-item-sub-header">
+              Write down something today and never forget tomorrow
+            </div>
+          </div>
+        </div>
+        <div class="note-button button-main">
+          <span class="fas fa-plus"></span>
+        </div>
+      </div>
+      <!-- the section for adding notes -->
+      <div class="modal-container">
+        <div class="container modal">
+          <h1 class="gen-style add-note-header">Note</h1>
+          <div class="note-date note-date-add">Date</div>
+          <div class="note-add-title">
+            <label for="input search">
+              <input
+                type="text"
+                name="title"
+                class="gen-style inputs add-title"
+                placeholder="Title"
+              />
+            </label>
+          </div>
+          <div class="note-add-content">
+            <label for="input search">
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                placeholder="Note something down"
+                class="inputs add-content"
+                rows="5"
+              ></textarea>
+            </label>
+          </div>
+          <div class="note-button note-add-back">
+            <i class="fas fa-arrow-left"></i>
+          </div>
+          <div class="note-button note-add-check">
+            <i class="fas fa-check"></i>
+          </div>
+        </div>
+        <div class="container search-area gen-style edit-content-behavior">
+          <div class="edit-tool albums-add">
+            <i class="fas fa-image"></i>
+            <span>Albums</span>
+          </div>
+          <div class="edit-tool todo-list-add">
+            <i class="fas fa-clipboard-list"></i>
+            <span>To-do list</span>
+          </div>
+          <div class="edit-tool reminder-add">
+            <i class="fas fa-bell"></i>
+            <span>Reminder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- second -->
+
+    <!-- the end -->
+    <script src="./index.js"></script>
+  </body>
+</html>

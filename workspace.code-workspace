@@ -1,0 +1,20 @@
+{
+  "folders": [
+	{
+		"name": "grid",
+		"path": "."
+	},
+	{
+		"name": "webfonts",
+		"path": "..\\..\\..\\..\\distance\\webfonts"
+	},
+	{
+		"name": "css",
+		"path": "..\\..\\..\\..\\distance\\css"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "grid",
+    "cSpell.words": ["xmark"]
+  }
+}

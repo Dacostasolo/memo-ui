@@ -1,0 +1,483 @@
+* {
+  box-sizing: border-box;
+  margin: 0rem;
+  padding: 0rem;
+}
+
+:root {
+  --text-main-color: #fff;
+  --text-sub-color: #9e9d9d;
+  --button-color: rgb(8, 81, 240);
+  --background-color: rgb(49, 48, 48);
+  --container-color: rgb(61, 60, 60);
+  font-size: 100%;
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  background-color: var(--background-color);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background-color: var(--container-color);
+  padding-inline: 1rem;
+  padding-block: 1.5rem;
+  max-width: 35rem;
+  height: max-content;
+  margin: 5px;
+}
+.body-content {
+  position: relative;
+  background-color: var(--background-color);
+  width: 32rem;
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+}
+.display-note {
+  position: relative;
+  width: inherit;
+  margin-inline-end: 2rem;
+}
+
+.header {
+  font-size: 2.5rem;
+  padding: 0.5rem;
+}
+
+.search-area {
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  padding-block: 1rem;
+  margin-block-end: 1rem;
+  color: var(--text-sub-color);
+}
+
+.inputs {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 27rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+  color: var(--text-main-color);
+}
+label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.inputs:focus {
+  outline: none;
+}
+
+.inputs::placeholder {
+  color: var(--text-sub-color);
+}
+
+.main-body-content {
+  background-color: transparent;
+  padding-block: 0.2rem;
+  padding-inline: 0rem;
+  height: 25rem;
+  overflow-y: scroll;
+}
+
+.note-item {
+  position: relative;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  color: var(--text-main-color);
+  padding-block: 0.5rem;
+}
+.note-icons {
+  position: absolute;
+  right: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 3rem;
+  top: 0.7rem;
+  color: var(--text-main-color);
+  font-size: 0.7rem;
+}
+
+.note-item {
+  margin-block-end: 0.5rem;
+  min-height: 4rem;
+}
+.note-item-header {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.note-item-sub-header {
+  font-size: 0.7rem;
+  padding-inline-end: 1rem;
+}
+
+.note-date {
+  color: var(--text-sub-color);
+  margin-block-start: 1rem;
+  font-size: 0.7rem;
+}
+.note-button-x,
+.note-button {
+  background-color: var(--button-color);
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  padding: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0.5rem;
+  width: 0.5rem;
+  position: absolute;
+  color: var(--text-main-color);
+  font-size: 0.7rem;
+}
+
+.fa-pen {
+  position: relative;
+}
+.fa-xmark {
+  position: relative;
+  background-color: transparent;
+}
+
+.button-main {
+  height: 3rem;
+  width: 3rem;
+  bottom: 1.5rem;
+  right: 1rem;
+  z-index: 1000;
+  padding: 1rem;
+  font-size: 1rem;
+}
+.note-add-check .fa-check {
+  opacity: 1;
+}
+
+.modal-container,
+.display-note {
+  transition: transform 1s ease-in-out;
+  -webkit-transition: transform 1s ease-in-out;
+  -moz-transition: transform 1s ease-in-out;
+  -ms-transition: transform 1s ease-in-out;
+  -o-transition: transform 1s ease-in-out;
+}
+
+.modal {
+  position: relative;
+  padding-block-end: 2rem;
+}
+
+.add-note-header {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0.3rem;
+  left: 3rem;
+}
+
+.note-date-add {
+  padding-block: 0.5rem;
+  color: var(--text-sub-color);
+  font-size: 0.7rem;
+}
+
+.note-add-check {
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
+.note-add-back {
+  top: 0.3rem;
+  left: 0.3rem;
+}
+
+.add {
+  display: block;
+}
+
+.check {
+  opacity: 1;
+}
+
+.unchecked {
+  opacity: 0;
+}
+
+.gen-style {
+  color: var(--text-main-color);
+  font-weight: bold;
+}
+
+.edit-content-behavior {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-tool {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 1.5rem;
+  font-weight: normal;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding-block-end: 0.5rem;
+}
+
+.edit-tool-selected::before {
+  content: '';
+  position: absolute;
+  background-color: var(--button-color);
+  height: 0.1rem;
+  width: 3rem;
+  bottom: 0rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.change-display {
+  transform: translateX(-32rem);
+  -webkit-transform: translateX(-32rem);
+  -moz-transform: translateX(-32rem);
+  -ms-transform: translateX(-32rem);
+  -o-transform: translateX(-32rem);
+}
+
+.reminder-add {
+  color: var(--text-sub-color);
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--background-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--container-color);
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  height: 1rem;
+}
+
+.index {
+  display: none;
+}
+
+.timer {
+  background-color: var(--background-color);
+  position: relative;
+  text-align: center;
+  font-size: 1rem;
+  height: 6rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.timer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  height: inherit;
+  width: inherit;
+  border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  -webkit-border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  -moz-border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  -ms-border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  -o-border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  border: 1px solid rgb(2, 238, 206);
+  animation: first 1s infinite reverse;
+  -webkit-animation: first 1.5s infinite;
+  animation-timing-function: cubic-bezier(0, 0, 0, 0);
+  transition: transform 1s;
+  -webkit-transition: transform 1s;
+  -moz-transition: transform 1s;
+  -ms-transition: transform 1s;
+  -o-transition: transform 1s;
+}
+
+@keyframes first {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+.timer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid rgb(110, 233, 10);
+  background-color: transparent;
+  width: inherit;
+  height: inherit;
+  border-radius: 62% 38% 37% 63% / 75% 68% 32% 25%;
+  -webkit-border-radius: 62% 38% 37% 63% / 75% 68% 32% 25%;
+  -moz-border-radius: 62% 38% 37% 63% / 75% 68% 32% 25%;
+  -ms-border-radius: 62% 38% 37% 63% / 75% 68% 32% 25%;
+  -o-border-radius: 62% 38% 37% 63% / 75% 68% 32% 25%;
+  animation: first 1.5s infinite reverse;
+  -webkit-animation: first 1.5s infinite reverse;
+  animation-timing-function: cubic-bezier(0, 0, 0, 0);
+  transition: transform 1s;
+  -webkit-transition: transform 1s;
+  -moz-transition: transform 1s;
+  -ms-transition: transform 1s;
+  -o-transition: transform 1s;
+}
+
+@keyframes second {
+  100% {
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+  }
+}
+/* .timer::after::after{
+  content: "";
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  top: 0;
+  left: 0;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border: 1px solid var(--button-color);
+  background-color: transparent;
+} */
+
+/*//////////////////////////////////////*/
+
+.timer-circle {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  background-color: var(--container-color);
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--button-color);
+  top: 0;
+  bottom: 0;
+}
+
+.circle-one {
+  transform: translate(0.5rem, 0.5rem);
+  width: 9rem;
+  height: 9rem;
+  -webkit-transform: translate(0.5rem, 0.5rem);
+  -moz-transform: translate(0.5rem, 0.5rem);
+  -ms-transform: translate(0.5rem, 0.5rem);
+  -o-transform: translate(0.5rem, 0.5rem);
+  z-index: 1;
+}
+
+.circle-two {
+  width: 8.9rem;
+  height: 8.9rem;
+  background-color: var(--container-color);
+  transform: translate(0.555rem, 0.555rem);
+  -webkit-transform: translate(0.555rem, 0.555rem);
+  -moz-transform: translate(0.555rem, 0.555rem);
+  -ms-transform: translate(0.555rem, 0.555rem);
+  -o-transform: translate(0.555rem, 0.555rem);
+  z-index: 3;
+}
+
+.rectangle {
+  width: 10rem;
+  height: 10rem;
+  background-color: var(--container-color);
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  animation: rotate 1s 1s infinite alternate;
+  -webkit-animation: rotate 2s 1s infinite alternate;
+  animation-timing-function: cubic-bezier(0, 0, 0);
+  transition: transform 1s;
+  -webkit-transition: transform 1s;
+  -moz-transition: transform 1s;
+  -ms-transition: transform 1s;
+  -o-transition: transform 1s;
+}
+
+@keyframes rotate {
+  100% {
+    transform: translate3d(10rem, 0rem, 20rem);
+    -webkit-transform: translate3d(10rem, 0rem, 20rem);
+    -moz-transform: translate3d(10rem, 0rem, 20rem);
+    -ms-transform: translate3d(10rem, 0rem, 20rem);
+    -o-transform: translate3d(10rem, 0rem, 20rem);
+    transform-origin: 10%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  :root {
+    font-size: 75%;
+  }
+}
