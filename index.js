@@ -89,13 +89,14 @@ const displayNotes = (notes, isDelete) => {
   }
 }
 
+//delegating events to buttons not present in the dom at the dom is loaded
 document.querySelector('.display-note').addEventListener('click', function (e) {
   e.preventDefault()
   if (e.target.classList.contains('note-button-y')) {
     editAddItem()
   }
   if (e.target.classList.contains('fa-xmark')) {
-    const date = e.target.parentElement.parentElement.children[2].textContent
+    const date = e.target.parentElement.previousElementSibling.textContent
     const index = notes.findIndex((note) => {
       return note.date == date
     })
